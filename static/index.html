@@ -185,62 +185,82 @@
       
       <article class='fill'>
         <h3>
-          Web Sockets
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
+          Web Sockets</h3>
+          <ul>
+            <li>Low latency, persistent, full duplex</li>
+            <li>Upgrades from HTTP handshake</li>
+            <li>UTF8</li>
+            <li>Simple to use</li>
+<section><pre>
+var socket = new WebSocket("ws://server.com");
+
+socket.onopen = function(event) { 
+  socket.send("Hello Server"); }
+
+socket.onmessage = function(event) { 
+  alert("Server says: " + event.data); }
+</pre></section>
+            <li>Binary on the way; Unreliable being discussed</li></ul>
       </article>
-      
+
+      <article class='fill'>
+        <h3>
+          Application Cache</h3>
+        <ul><li>Cache HTML pages and resources</li>
+          <li>Manifest:</li>
+        <section><pre>CACHE MANIFEST
+index.html
+stylesheet.css
+images/logo.png
+scripts/main.js</pre>
+              </section>
+        </ul>
+      </article>
+
       <article class='fill'>
         <h3>
           IndexedDB
         </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
+        <ul><li>Transactional database</li>
+          <li>Good Performance</li>
+          <li>Asynchronous API<ul>
+            <li>Synchronous available from worker threads</li>
+            </ul>
+          </li>
+    </ul>
       </article>
       
       <article class='fill'>
         <h3>
           File System
         </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
+        <ul><li>Large file storage</li>
+          <li>Intelligently cache your resources</li>
+          <li>Store large binary blobs</li>
+    </ul>
       </article>
       
       <article class='fill'>
         <h3>
           WebGL
         </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
+        <ul><li>OpenGL ES 2<ul>
+          <li>Textures, Framebuffers, Blending</li>
+          </ul>
+          </li>
+          <li>GLSL Vertex and Fragment Shaders</li>
+          <li>Khronos Group Specification 1.0 in Q1 2011</li>
+    </ul>
       </article>
       
       <article class='fill'>
         <h3>
-          Canvas
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
+          Canvas</h3>
+    <ul>
+      <li>2D drawing API</li>
+      <li>Sprites</li>
+      <li>Vector paths, fills, gradients, text, etc</li>
+    </ul>
       </article>
       
       <article class='fill'>
@@ -259,9 +279,6 @@
         <p>
           <img src='images/example-cat.jpg'>
         </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
       </article>
       
       <article class='fill'>
