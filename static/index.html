@@ -18,7 +18,7 @@
 
     <meta charset='utf-8'>
     <script
-      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+      src='slides.js'></script>
   </head>
   
   <style>
@@ -35,27 +35,22 @@
          bottom: 0;
          background: url(images/html5-logo-65x65.png) 30px 20px no-repeat;
        }
-    
   </style>
 
   <body style='display: none'>
 
     <section class='slides layout-regular template-default'>
-      
-      <!-- Your slides (<article>s) go here. Delete or comment out the
-           slides below. -->
-        
-        
-      
+      <!--  layout-faux-widescreen or layout-widescreen -->
+<!--          
       <article class='biglogo'>
       </article>
-
+-->
       <article>
         <h1>
           Super Happy Modern HTML5 Browser Games
         </h1>
         <p>
-          Vince Sheib
+          Vincent Scheib
           <br>
           July 20, 2011
         </p>
@@ -67,16 +62,18 @@
         </h3>
         <ul>
           <li>
-            Gamebryo @ Emergent
+            Chrome Games Engineer
           </li>
           <li>
-            Chrome Games Tech Lead
-          </li>
-          <li>
-            <a href="https://twitter.com/#!/vincent_scheib">@vincent_scheib</a>
+            Previously:<br>
+            Gamebryo @ Emergent<br>
+            a few console games
           </li>
           <li>
             <a href="http://scheib.net/">scheib.net</a>
+          </li>
+          <li>
+            @<a href="https://twitter.com/#!/vincent_scheib">vincent_scheib</a>
           </li>
         </ul>
       </article>
@@ -101,84 +98,6 @@
         <p>
           <img class='centered' style='height: 500px' src='images/chrome-logo.jpg'>
         </p>
-      </article>
-      
-      <article>
-        <h2>
-          Capabilities
-        </h2>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-          Web Sockets
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-          IndexedDB
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-          File System
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-          WebGL
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-          Canvas
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-      
-      <article class='fill'>
-        <h3>
-         Web Audio API
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
       </article>
       
       <article>
@@ -260,6 +179,144 @@
       
       <article>
         <h2>
+          Capabilities
+        </h2>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+          Web Sockets</h3>
+          <ul>
+            <li>Low latency, persistent, full duplex</li>
+            <li>Upgrades from HTTP handshake</li>
+            <li>UTF8</li>
+            <li>Simple to use</li>
+<section><pre>
+var socket = new WebSocket("ws://server.com");
+
+socket.onopen = function(event) { 
+  socket.send("Hello Server"); }
+
+socket.onmessage = function(event) { 
+  alert("Server says: " + event.data); }
+</pre></section>
+            <li>Binary on the way; Unreliable being discussed</li></ul>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Application Cache</h3>
+        <ul><li>Cache HTML pages and resources</li>
+          <li>Manifest:</li>
+        <section><pre>CACHE MANIFEST
+index.html
+stylesheet.css
+images/logo.png
+scripts/main.js</pre>
+              </section>
+        </ul>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          IndexedDB
+        </h3>
+        <ul><li>Transactional database</li>
+          <li>Good Performance</li>
+          <li>Asynchronous API<ul>
+            <li>Synchronous available from worker threads</li>
+            </ul>
+          </li>
+    </ul>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+          File System
+        </h3>
+        <ul><li>Large file storage</li>
+          <li>Intelligently cache your resources</li>
+          <li>Store large binary blobs</li>
+    </ul>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+          WebGL
+        </h3>
+        <ul><li>OpenGL ES 2<ul>
+          <li>Textures, Framebuffers, Blending</li>
+          </ul>
+          </li>
+          <li>GLSL Vertex and Fragment Shaders</li>
+          <li>Khronos Group Specification 1.0 in Q1 2011</li>
+    </ul>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+          Canvas</h3>
+    <ul>
+      <li>2D drawing API</li>
+      <li>Sprites</li>
+      <li>Vector paths, fills, gradients, text, etc</li>
+    </ul>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+         Web Audio API
+        </h3>
+        <ul>
+          <li>High performance, low latency audio</li>
+          <li>Sample accurate scheduling</li>
+          <li>Spatialization</li>
+          <li>Convolution</li>
+          <li>Frequency analysis (FFT)</li>
+          <li>Filtering &amp; Compression</li>
+          <li>Raw synthesys or processing in JavaScript</li>
+          </ul>
+        <p>
+          <img src='images/example-cat.jpg'>
+        </p>
+      </article>
+      
+      <article class='fill'>
+        <h3>
+         Native Client
+        </h3>
+        <ul>
+          <li>
+            Run native code securely in browser
+            <ul>
+              <li>
+                C++ as pervasive as JavaScript
+              </li>
+            </ul>
+          </li>
+          <li>
+            Utilize legacy code bases
+          </li>
+          <li>
+            Access Graphics (2D/3D), Audio, Threading, raw memory, Input APIs.
+          </li>
+          <li>
+            Native code performace
+          </li>
+          <li>
+            Portable games across operating systmes
+          </li>
+          <li>
+            Unity demonstrated last year; Dev Preview since February
+          </li>
+          <li>
+            Public release this fall in Chrome
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h2>
           Monetization
         </h2>
       </article>
@@ -268,7 +325,7 @@
         <h3>
           In-App Payments
         </h3>
-        <p style="float:left;padding-right: 100px">
+        <p style="float:left;padding-right: 10px">
           <img src='images/money.png' height="500">
         </p>
         <ul>
@@ -286,6 +343,9 @@
           </li>
           <li>
             No licensing fees
+          </li>
+          <li>
+            <a href="http://goo.gl/5percentfees">http://goo.gl/5percentfees</a>
           </li>
         </ul>
       </article>
@@ -314,9 +374,6 @@
                   EA, Zynga, Atari, BigPoint, PopCap, and many indies
               </li>
               <li>
-                  Even easier publishing with <a href="http://appmator.appspot.com" target="_new">Appmator</a>
-              </li>
-              <li>
                   <strong>Chrome Web Store users use Chrome</strong>
               </li>
           </ul>
@@ -339,7 +396,7 @@
       
       <article>
           <h3>
-              World Golf Tour + Spryfox FTW
+              Spryfox + Chrome Web Store FTW
           </h3>
           <p style="margin-bottom: 80px">
               Early indications ... traffic from Chrome Web Store is <strong>twice as sticky</strong> as traffic from other sources.
@@ -423,8 +480,8 @@
       <article>
         <h3>HTML5 Game Conferences</h3>
         <p>
-          <img src="images/ongamestart-logo.png" alt="onGameStart HTML5 Game Conference" style="float:left;padding-top:80px">
-          <img src="images/newgameconf-logo.png" alt="New Game : The Conference for HTML5 Game Developers" height="400">
+          <img src="images/ongamestart-logo.png" alt="onGameStart HTML5 Game Conference" style="float:left;padding-top:80px"> Sept 22-23, Poland
+          <img src="images/newgameconf-logo.png" alt="New Game : The Conference for HTML5 Game Developers" height="400"> Nov 1-2, San Francisco
         </p>
       </article>
       
@@ -440,7 +497,29 @@
         </ul>
       </article>
 
-      
+      <article>
+        <h3>
+          Thanks!
+        </h3>
+        <ul>
+          <li>
+            Slides <a href="http://cc-2011-html5-games.appspot.com"><strong>cc-2011-html5-games</strong>.appspot.com</a>
+          </li>
+          <li>
+            Vincent Scheib
+            <ul>
+              <li>
+                <a href="http://scheib.net/">scheib.net</a>
+              </li>
+              <li>
+                @<a href="https://twitter.com/#!/vincent_scheib">vincent_scheib</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+<!--      
       <article>
         <p>
           This is a slide with just text. This is a slide with just text.
@@ -751,7 +830,7 @@
             <a href='http://www.google.com'>google.com</a>
         </ul>
       </article>
-
+-->
     </section>
 
   </body>
