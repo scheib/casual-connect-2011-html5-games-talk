@@ -25,7 +25,8 @@
     /* Your individual styles here, or just use inline styles if that’s
        what you want. */
     
-   .slides > article:not(.fill)::before {
+    /* HTML5 logo */
+   .slides > article:not(.fill):not(.segue)::before {
          content: '';
          display: block;
          width: 100px;
@@ -35,16 +36,23 @@
          bottom: 0;
          background: url(images/html5-logo-65x65.png) 30px 20px no-repeat;
        }
+
+   .slides > article.segue {
+         background-color: #dfd9d9;
+       }
+
+   .slides > article.segue > h4 {
+         color: black;
+         text-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+       }
+
   </style>
 
   <body style='display: none'>
 
     <section class='slides layout-regular template-default'>
       <!--  layout-faux-widescreen or layout-widescreen -->
-<!--          
-      <article class='biglogo'>
-      </article>
--->
+
       <article>
         <h1>
           Super Happy Modern HTML5 Browser Games
@@ -83,8 +91,14 @@
         <video style="padding-top:50px" src="video/3dreams-small.webm" controls width="800" preload></video>
       </article>
       
-      <article>
-        <h2>Reach</h2>
+      <article class='segue nobackground'>
+        <h4>Reach</h4>
+        <p>Anatomy of a modern HTML5 game</p>
+        <p>Capabilities</p>
+        <p>Monetization</p>
+        <p>Distribution</p>
+        <p>Engines</p>
+        <p>Learning more</p>
       </article>
       
       <article class='fill'>
@@ -105,12 +119,16 @@
         </p>
       </article>
       
-      <article>
-        <h2>
-          Anatomy of a modern HTML5 game
-        </h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <h4>Anatomy of a modern HTML5 game</h4>
+        <p>Capabilities</p>
+        <p>Monetization</p>
+        <p>Distribution</p>
+        <p>Engines</p>
+        <p>Learning more</p>
       </article>
-      
+            
       <article class='fill'>
         <p>
           <a href="http://chrome.angrybirds.com" target="_new"><img src='images/angry-birds-screenshot.png' alt="Angry Birds screenshot"></a>
@@ -186,10 +204,14 @@
         </ul>
       </article>
       
-      <article>
-        <h2>
-          Capabilities
-        </h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <p>Anatomy of a modern HTML5 game</p>
+        <h4>Capabilities</h4>
+        <p>Monetization</p>
+        <p>Distribution</p>
+        <p>Engines</p>
+        <p>Learning more</p>
       </article>
       
       <article class='fill'>
@@ -338,10 +360,14 @@ scripts/main.js</pre>
         </ul>
       </article>
       
-      <article>
-        <h2>
-          Monetization
-        </h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <p>Anatomy of a modern HTML5 game</p>
+        <p>Capabilities</p>
+        <h4>Monetization</h4>
+        <p>Distribution</p>
+        <p>Engines</p>
+        <p>Learning more</p>
       </article>
       
       <article>
@@ -373,10 +399,14 @@ scripts/main.js</pre>
         </ul>
       </article>
       
-      <article>
-        <h2>
-          Distribution
-        </h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <p>Anatomy of a modern HTML5 game</p>
+        <p>Capabilities</p>
+        <p>Monetization</p>
+        <h4>Distribution</h4>
+        <p>Engines</p>
+        <p>Learning more</p>
       </article>
       
       <article class='fill'>
@@ -429,10 +459,14 @@ scripts/main.js</pre>
           </p>
       </article>
       
-      <article>
-        <h2>
-          Engines
-        </h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <p>Anatomy of a modern HTML5 game</p>
+        <p>Capabilities</p>
+        <p>Monetization</p>
+        <p>Distribution</p>
+        <h4>Engines</h4>
+        <p>Learning more</p>
       </article>
       
       <article>
@@ -496,8 +530,14 @@ scripts/main.js</pre>
         </p>
       </article>
       
-      <article>
-        <h2>Learning more</h2>
+      <article class='segue nobackground'>
+        <p>Reach</p>
+        <p>Anatomy of a modern HTML5 game</p>
+        <p>Capabilities</p>
+        <p>Monetization</p>
+        <p>Distribution</p>
+        <p>Engines</p>
+        <h4>Learning more</h4>
       </article>
       
       <article>
