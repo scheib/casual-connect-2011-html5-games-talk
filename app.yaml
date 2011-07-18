@@ -10,6 +10,12 @@ handlers:
 - url: (.*)/
   static_files: static\1/index.html
   upload: static/index.html
+  
+- url: /video/(.*\.webm)
+  static_files: static/video/\1
+  mime_type: video/webm
+  upload: video/
 
 - url: /
   static_dir: static
+
