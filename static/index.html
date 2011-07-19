@@ -68,7 +68,6 @@
          color: black;
          text-shadow: 0 5px 5px rgba(0, 0, 0, .2);
        }
-
   </style>
 
   <body style='display: none'>
@@ -339,13 +338,29 @@ scripts/main.js</pre>
       <article class='fill'>
         <h3>
           More...</h3>
-        <ul>
+        <ul class="css3dcontainer">
           <li>GeoLocation</li>
           <li>Device orientation</li>
           <li><span style="font-family: 'Fontdiner Swanky'">Web Fonts</span></li>
-          <li>CSS 3D</li>
+          <li class="css3ddemo">CSS 3D</li>
           <li>SVG - Scalable Vector Graphics</li>
         </ul>
+        <style>
+            .css3dcontainer {
+                -webkit-perspective:1000;
+            }
+
+            .css3ddemo {
+                border-radius:5px;
+                -webkit-transition: all .4s ease-in-out;
+                -webkit-transform-style:preserve-3d;
+            }
+
+            .css3ddemo:hover {
+                background-color: #eeeeee;
+                -webkit-transform:rotateY(30deg);
+            }
+        </style>
       </article>
       
       <article class='fill'>
