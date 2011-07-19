@@ -144,23 +144,35 @@
         </p>
       </article>
       
-      <article>
+      <article class="fill">
         <h3>
           Box2D for Physics
         </h3>
-        <p>
-          <img class='centered' src='images/box2d-logo.gif'>
-        </p>
-        <p>
-          <img class="centered" src="images/box2d-screenshot.png">
-        </p>
+        <iframe style="padding-top:100px;padding-left:50px" src="http://savagelook.com/demos/box2djs/helloworld.html"></iframe>
       </article>
       
-      <article class="fill">
+      <article class="fill" id="webgl-demo">
         <h3>
-          WebGL for Fast Graphics
+          WebGL for Fast Graphics <span id="webgl-toggle">on</span>
         </h3>
-        <iframe src="http://webglsamples.googlecode.com/hg/aquarium/aquarium.html"></iframe>
+        <script>
+        var webglDemo = document.getElementById("webgl-demo");
+        webglDemo.addEventListener("slideenter", function() {
+          if (document.getElementById("aquarium-demo")) {
+            return;
+          }
+          var iframe = document.createElement("iframe");
+          iframe.src = "http://webglsamples.googlecode.com/hg/aquarium/aquarium.html";
+          iframe.id = "aquarium-demo";
+          webglDemo.appendChild(iframe);
+        });
+        webglDemo.addEventListener("slideleave", function() {
+          var iframe = document.getElementById("aquarium-demo");
+          if (iframe) {
+            iframe.parentNode.removeChild(iframe);
+          }
+        });
+        </script>
       </article>
       
       <article>
