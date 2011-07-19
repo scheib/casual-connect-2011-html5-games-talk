@@ -19,6 +19,26 @@
     <meta charset='utf-8'>
     <script
       src='slides.js'></script>
+    <script async>
+    var transientIframe = function(slideId, iframeId, url) {
+      var slide = document.getElementById(slideId);
+      slide.addEventListener("slideenter", function() {
+        if (document.getElementById(iframeId)) {
+          return;
+        }
+        var iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.id = iframeId;
+        slide.appendChild(iframe);
+      });
+      slide.addEventListener("slideleave", function() {
+        var iframe = document.getElementById(iframeId);
+        if (iframe) {
+          iframe.parentNode.removeChild(iframe);
+        }
+      });
+    }
+    </script>
   </head>
   
   <style>
@@ -129,10 +149,10 @@
         <p>Learning more</p>
       </article>
             
-      <article class='fill'>
-        <p>
-          <a href="http://chrome.angrybirds.com" target="_new"><img src='images/angry-birds-screenshot.png' alt="Angry Birds screenshot"></a>
-        </p>
+      <article class='fill' id="angry-birds">
+        <script async>
+          transientIframe("angry-birds", "ab-demo", "http://chrome.angrybirds.com");
+        </script>
       </article>
       
       <article>
@@ -153,25 +173,10 @@
       
       <article class="fill" id="webgl-demo">
         <h3>
-          WebGL for Fast Graphics <span id="webgl-toggle">on</span>
+          WebGL for Fast Graphics
         </h3>
-        <script>
-        var webglDemo = document.getElementById("webgl-demo");
-        webglDemo.addEventListener("slideenter", function() {
-          if (document.getElementById("aquarium-demo")) {
-            return;
-          }
-          var iframe = document.createElement("iframe");
-          iframe.src = "http://webglsamples.googlecode.com/hg/aquarium/aquarium.html";
-          iframe.id = "aquarium-demo";
-          webglDemo.appendChild(iframe);
-        });
-        webglDemo.addEventListener("slideleave", function() {
-          var iframe = document.getElementById("aquarium-demo");
-          if (iframe) {
-            iframe.parentNode.removeChild(iframe);
-          }
-        });
+        <script async>
+          transientIframe("webgl-demo", "aquarium-demo", "http://webglsamples.googlecode.com/hg/aquarium/aquarium.html");
         </script>
       </article>
       
