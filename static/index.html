@@ -20,7 +20,8 @@
     <script
       src='slides.js'></script>
     <script async>
-    var transientIframe = function(slideId, iframeId, url) {
+    var transientIframe = function(slideId, url) {
+      iframeId = slideId + "-iframe";
       var slide = document.getElementById(slideId);
       slide.addEventListener("slideenter", function() {
         if (document.getElementById(iframeId)) {
@@ -152,7 +153,7 @@
             
       <article class='fill' id="angry-birds">
         <script async>
-          transientIframe("angry-birds", "ab-demo", "http://chrome.angrybirds.com");
+          transientIframe("angry-birds", "http://chrome.angrybirds.com");
         </script>
       </article>
       
@@ -177,7 +178,7 @@
           WebGL for Fast Graphics
         </h3>
         <script async>
-          transientIframe("webgl-demo", "aquarium-demo", "http://webglsamples.googlecode.com/hg/aquarium/aquarium.html");
+          transientIframe("webgl-demo", "http://webglsamples.googlecode.com/hg/aquarium/aquarium.html");
         </script>
       </article>
       
@@ -325,7 +326,7 @@ scripts/main.js</pre>
 
       <article class='fill' id='file-demo'>
         <script async>
-          transientIframe("file-demo", "term-demo", "http://www.htmlfivewow.com/demos/terminal/terminal.html");
+          transientIframe("file-demo", "http://www.htmlfivewow.com/demos/terminal/terminal.html");
         </script>
       </article>
 
