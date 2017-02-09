@@ -1,7 +1,6 @@
-application: cc-2011-html5-games
-version: 1
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: true
 
 default_expiration: "3d"
 
